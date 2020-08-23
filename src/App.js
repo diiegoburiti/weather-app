@@ -23,15 +23,13 @@ function App() {
         .then((result) => {
           setWeather(result);
           setQuery("");
-          console.log(result);
         });
     }
-    console.log(process.env.REACT_APP_KEY);
   }
 
   return (
     <div className="App">
-      <main>
+      <main className="main">
         <div className="search-box">
           <input
             type="text"
