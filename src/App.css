@@ -6,18 +6,20 @@
 
 body {
   font-family: "montseratt", sans-serif;
+  background: linear-gradient(to bottom, #373b44, #4286f4);
 }
 
 .main {
   background: url("./assets/undraw_weather_app.svg") center center no-repeat;
-  width: 100%;
   height: 100vh;
   padding: 1rem;
+  max-width: 80vw;
+  margin: 0 auto;
 }
 
 .search-box {
   width: 100%;
-  margin: 0 0 75px;
+  margin: 1rem 0;
 }
 
 .search-box .search-bar {
@@ -25,7 +27,6 @@ body {
   width: 100%;
   padding: 15px;
   appearance: none;
-  background: none;
   border: none;
   outline: none;
   background: rgba(255, 255, 255, 0.5);
@@ -81,4 +82,36 @@ body {
   font-size: 48px;
   font-weight: 700;
   text-shadow: 3px 3px rgba(50, 50, 70, 0.5);
+}
+
+.location-box {
+  animation: show-right 0.3s forwards;
+  transition: 0.3s;
+  margin-top: 6rem;
+}
+
+@keyframes show-right {
+  from {
+    opacity: 0;
+    transform: translate3d(0, -10px, 0);
+  }
+  to {
+    opacity: 1;
+    transform: translate3d(0, 0, 0);
+  }
+}
+
+@media (max-width: 800px) {
+  .main {
+    background: none;
+  }
+}
+
+@media (max-width: 414px) {
+  .main {
+    background: none;
+    padding: 1rem;
+    max-width: 90vw;
+    margin: 0 auto;
+  }
 }
