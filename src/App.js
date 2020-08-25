@@ -46,22 +46,22 @@ function App() {
 
   async function searchWeather(event) {
     let response;
+    let json;
+    console.log(error);
     if (event.key === "Enter") {
       try {
         setError(null);
         response = await fetch(
           `${api.url}weather?q=${query}&units=metric&APPID=${api.key}`,
         );
-        response = await response.json();
-        setWeather(response);
+        json = await response.json();
+        if (response.ok === false) throw new Error(json.message);
+        setWeather(json);
         setQuery("");
         console.log(response);
       } catch (err) {
         setError(err.message);
-        console.log("dasdadsa" + err);
-      } finally {
-        setWeather(response);
-        setError(null);
+        console.log(err);
       }
     }
   }
@@ -78,7 +78,7 @@ function App() {
             value={query}
             onKeyPress={searchWeather}
           />
-          {error && <p>{error}</p>}
+          {error ? <p className="error">{error}</p> : ""}
         </div>
         {weather.main ? (
           <div className="location-box">

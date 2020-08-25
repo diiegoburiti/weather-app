@@ -101,6 +101,17 @@ body {
   }
 }
 
+.error {
+  font-size: 3rem;
+  color: #fff;
+  margin-top: 4rem;
+  text-align: center;
+}
+
+.error::first-letter {
+  text-transform: uppercase;
+}
+
 @media (max-width: 800px) {
   .main {
     background: none;
