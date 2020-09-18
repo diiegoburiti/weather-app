@@ -1,10 +1,22 @@
 import React from "react";
 import styled from "styled-components";
 import Input from "../Form/Input";
+import LocationBox from "./Location/LocationBox";
 
 const Box = styled.div`
   width: 100%;
   margin: 1rem 0;
+`;
+
+const ErrorMessage = styled.p`
+  font-size: 3rem;
+  color: #fff;
+  margin-top: 4rem;
+  text-align: center;
+
+  &::first-letter {
+    text-transform: uppercase;
+  }
 `;
 
 const api = {
@@ -13,9 +25,9 @@ const api = {
 };
 
 const SearchBox = ({ value }) => {
-  const [error, setError] = React.useState(null);
   const [query, setQuery] = React.useState("");
   const [weather, setWeather] = React.useState({});
+  const [error, setError] = React.useState(null);
 
   function handleChange(event) {
     event.preventDefault();
@@ -48,10 +60,13 @@ const SearchBox = ({ value }) => {
         className="search-bar"
         placeholder="Search a city"
         onChange={handleChange}
-        value={value}
+        value={query}
         onKeyPress={searchWeather}
       />
-      {error ? <p className="error">{error}</p> : ""}
+
+      {error ? <ErrorMessage className="error">{error}</ErrorMessage> : ""}
+
+      {weather.main ? <LocationBox weather={weather} /> : ""}
     </Box>
   );
 };
