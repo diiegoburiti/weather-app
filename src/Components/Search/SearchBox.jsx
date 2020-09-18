@@ -58,7 +58,7 @@ const SearchBox = ({ value }) => {
       <Input
         type="text"
         className="search-bar"
-        placeholder="Search a city"
+        placeholder="Search for a city"
         onChange={handleChange}
         value={query}
         onKeyPress={searchWeather}

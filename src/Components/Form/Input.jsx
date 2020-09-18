@@ -14,6 +14,10 @@ const SearchBar = styled.input`
   color: #313131;
   font-size: 20px;
   transition: 0.4s ease;
+
+  &:focus {
+    background: rgba(255, 255, 255, 0.75);
+  }
 `;
 
 const Input = ({ onChange, value, type, onKeyPress, placeholder }) => {

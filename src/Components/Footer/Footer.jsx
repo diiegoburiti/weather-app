@@ -7,6 +7,9 @@ const TextFooter = styled.footer`
   padding: 1rem 0;
   text-align: center;
   color: rgba(255, 255, 255, 0.5);
+  position: absolute;
+  bottom: 0;
+  right: 42%;
 `;
 
 const Footer = ({ textFooter }) => {

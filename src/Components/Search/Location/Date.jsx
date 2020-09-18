@@ -12,9 +12,11 @@ const DateDisplay = styled.div`
 
 const Currentdate = () => {
   function dateBuilder(date) {
-    const now = new Date();
-    date = new Intl.DateTimeFormat("en-US", { dataStyle: "full" }).format(now);
-    return date;
+    let o = new Intl.DateTimeFormat(navigator.locales, {
+      timeStyle: "medium",
+      dateStyle: "short",
+    });
+    return o.format(Date.now());
   }
 
   return <DateDisplay>{dateBuilder()}</DateDisplay>;
