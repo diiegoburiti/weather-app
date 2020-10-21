@@ -1,13 +1,13 @@
-import React, { useEffect } from "react";
-import styled from "styled-components";
+import React from "react";
 import ErrorMessage from "../../utils/Error/Error";
+import Box from "../Box/Box";
 import Input from "../Form/Input";
 import LocationBox from "./Location/LocationBox";
 
-const Box = styled.div`
+/* const Box = styled.div`
   width: 100%;
   margin: 1rem 0;
-`;
+`; */
 
 const api = {
   key: process.env.REACT_APP_API_WEATHER_KEY,
@@ -52,16 +52,15 @@ const SearchBox = ({ value }) => {
     <Box>
       <Input
         type="text"
-        className="search-bar"
         placeholder="Search for a city"
         onChange={handleChange}
         value={query}
         onKeyPress={searchWeather}
       />
 
-      {error ? <ErrorMessage>{error}</ErrorMessage> : ""}
+      {error && <ErrorMessage>{error}</ErrorMessage>}
 
-      {weather.main ? <LocationBox weather={weather} /> : ""}
+      {weather.main && <LocationBox weather={weather} />}
     </Box>
   );
 };
