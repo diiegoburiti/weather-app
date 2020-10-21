@@ -10,10 +10,25 @@ const TextFooter = styled.footer`
   position: absolute;
   bottom: 0;
   right: 42%;
+
+  span {
+    font-size: 1.1rem;
+    color: rgba(255, 255, 255, 0.5);
+  }
+
+  @media (max-width: 800px) {
+    right: 35%;
+  }
+
+  @media (max-width: 415px) {
+    right: 25%;
+  }
 `;
 
-const Footer = ({ textFooter }) => {
-  return <TextFooter>{textFooter}</TextFooter>;
+export const Footer = ({ ...props }) => {
+  return (
+    <TextFooter {...props}>
+      <span>Made by Diego Buriti</span>
+    </TextFooter>
+  );
 };
-
-export default Footer;

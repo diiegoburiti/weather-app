@@ -1,5 +1,6 @@
-import React from "react";
+import React, { useEffect } from "react";
 import styled from "styled-components";
+import ErrorMessage from "../../utils/Error/Error";
 import Input from "../Form/Input";
 import LocationBox from "./Location/LocationBox";
 
@@ -8,19 +9,8 @@ const Box = styled.div`
   margin: 1rem 0;
 `;
 
-const ErrorMessage = styled.p`
-  font-size: 3rem;
-  color: #fff;
-  margin-top: 4rem;
-  text-align: center;
-
-  &::first-letter {
-    text-transform: uppercase;
-  }
-`;
-
 const api = {
-  key: process.env.REACT_APP_API_KEY,
+  key: process.env.REACT_APP_API_WEATHER_KEY,
   url: "https://api.openweathermap.org/data/2.5/",
 };
 
@@ -33,6 +23,10 @@ const SearchBox = ({ value }) => {
     event.preventDefault();
     setQuery(event.target.value);
   }
+
+  /*  useEffect(() => [
+
+  ], []) */
 
   async function searchWeather(event) {
     let response;
@@ -49,6 +43,7 @@ const SearchBox = ({ value }) => {
         setQuery("");
       } catch (err) {
         setError(err.message);
+        console.log(err.message);
       }
     }
   }
@@ -64,7 +59,7 @@ const SearchBox = ({ value }) => {
         onKeyPress={searchWeather}
       />
 
-      {error ? <ErrorMessage className="error">{error}</ErrorMessage> : ""}
+      {error ? <ErrorMessage>{error}</ErrorMessage> : ""}
 
       {weather.main ? <LocationBox weather={weather} /> : ""}
     </Box>
