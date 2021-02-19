@@ -12,10 +12,7 @@ const DateDisplay = styled.div`
 
 const Currentdate = () => {
   function dateBuilder(date) {
-    let o = new Intl.DateTimeFormat(navigator.locales, {
-      timeStyle: "medium",
-      dateStyle: "short",
-    });
+    let o = new Intl.DateTimeFormat(navigator.locales, {day: 'numeric', month: 'short', year: 'numeric', hour: 'numeric', minute: 'numeric', second: 'numeric'});
     return o.format(Date.now());
   }
 
