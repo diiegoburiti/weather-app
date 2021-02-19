@@ -1,13 +1,8 @@
 import React from "react";
 import ErrorMessage from "../../utils/Error/Error";
-import Box from "../Box/Box";
+import Container from "../Container/Container";
 import Input from "../Form/Input";
 import InfoBox from "../InfoBox/InfoBox";
-
-/* const Box = styled.div`
-  width: 100%;
-  margin: 1rem 0;
-`; */
 
 const api = {
   key: process.env.REACT_APP_API_WEATHER_KEY,
@@ -23,10 +18,6 @@ const SearchBox = ({ value }) => {
     event.preventDefault();
     setQuery(event.target.value);
   }
-
-  /*  useEffect(() => [
-
-  ], []) */
 
   async function searchWeather(event) {
     let response;
@@ -49,7 +40,7 @@ const SearchBox = ({ value }) => {
   }
 
   return (
-    <Box>
+    <Container>
       <Input
         type="text"
         placeholder="Search for a city"
@@ -61,7 +52,7 @@ const SearchBox = ({ value }) => {
       {error && <ErrorMessage>{error}</ErrorMessage>}
 
       {weather.main && <InfoBox weather={weather} />}
-    </Box>
+    </Container>
   );
 };
 
