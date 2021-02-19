@@ -10,15 +10,13 @@ const showDown = keyframes`
     transform: translate3d(0, 0, 0);
   }
 `
-
-// export const Wrapper = styled.div``
-
 export const Location = styled.div`
   color: #fff;
-  font-size: 32px;
+  font-size: 3rem;
   font-weight: 500;
   text-align: center;
   text-shadow: 3px 3px rgba(50, 50, 70, 0.5);
+  margin-bottom: 0.5rem;
 `
 export const Wrapper = styled.div`
   transition: 0.3s;
@@ -37,7 +35,7 @@ export const Temp = styled.div`
   border-radius: 10px;
   padding: 25px 35px;
   color: #fff;
-  font-size: 100px;
+  font-size: 6.5rem;
   font-weight: 900;
   text-shadow: 3px 3px rgba(50, 50, 70, 0.5);
   text-align: center;
@@ -53,7 +51,7 @@ export const CurrentWeather = styled.div`
 
 export const Date = styled.div`
   color: #fff;
-  font-size: 20px;
+  font-size: 1.5rem;
   font-weight: 300;
   font-style: italic;
   text-align: center;

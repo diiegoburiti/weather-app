@@ -1,4 +1,4 @@
-import styled from "styled-components";
+import styled from 'styled-components'
 
 export const TextFooter = styled.footer`
   font-size: 1.2rem;
@@ -10,21 +10,17 @@ export const TextFooter = styled.footer`
   bottom: 0;
   left: 50%;
   transform: translate(-50%, -50%);
-
-  @media (max-width: 800px) {
-    right: 35%;
-  }
-
-  @media (max-width: 415px) {
-    right: 25%;
-  }
-`;
+`
 
 export const Text = styled.span`
   a {
     font-size: 1.3rem;
-    color: rgba(255, 255, 255, 0.5);
     text-decoration: none;
-    color: #6c63ff;
+    color: #fff;
+    transition: 0.3s ease;
+
+    &:hover {
+      text-decoration: underline;
+    }
   }
 `
