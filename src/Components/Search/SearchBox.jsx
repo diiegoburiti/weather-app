@@ -2,7 +2,7 @@ import React from "react";
 import ErrorMessage from "../../utils/Error/Error";
 import Box from "../Box/Box";
 import Input from "../Form/Input";
-import LocationBox from "./Location/LocationBox";
+import InfoBox from "../InfoBox/InfoBox";
 
 /* const Box = styled.div`
   width: 100%;
@@ -60,7 +60,7 @@ const SearchBox = ({ value }) => {
 
       {error && <ErrorMessage>{error}</ErrorMessage>}
 
-      {weather.main && <LocationBox weather={weather} />}
+      {weather.main && <InfoBox weather={weather} />}
     </Box>
   );
 };

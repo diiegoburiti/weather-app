@@ -9,7 +9,7 @@ const MainComponent = styled.main`
   background: url(${bgImg}) center center no-repeat;
   height: 100vh;
   padding: 1rem;
-  max-width: 80vw;
+  max-width: 105rem;
   margin: 0 auto;
   position: relative;
 
